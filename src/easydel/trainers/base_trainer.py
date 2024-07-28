@@ -571,7 +571,7 @@ class BaseTrainer(abc.ABC):
             save_optimizer=self.arguments.save_optimizer_state,
         )
 
-        self._save_readme(checkpoint_dir)
+        # self._save_readme(checkpoint_dir)
         return filename
 
     def _get_current_step(self, state):
