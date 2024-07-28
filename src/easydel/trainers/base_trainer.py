@@ -789,7 +789,7 @@ partition_rules = {partition_rules}
             **easystate_to_huggingface_model_kwargs,
         )
 
-        self._save_readme(save_dir)
+        # self._save_readme(save_dir)
         hf_model.save_pretrained(save_dir, **torch_save_pretrained_kwargs)
         return hf_model
 
