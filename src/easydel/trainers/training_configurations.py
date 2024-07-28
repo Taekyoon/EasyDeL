@@ -484,17 +484,17 @@ class TrainArguments:
                 wandb.log(wandb_metrics, step=step)
 
             # Log to TensorBoard
-            summary_writer = self.get_board()
-            for key, value in metrics.items():
-                if isinstance(value, (float, int)):
-                    summary_writer.scalar(key, value, step=step)
-                elif isinstance(value, (list, tuple, np.ndarray, jnp.ndarray, Tensor)):  # type: ignore
-                    if hasattr(value, "cpu"):
-                        value = value.cpu().numpy()
-                    elif isinstance(value, jnp.ndarray):
-                        value = np.array(value)
-                    summary_writer.histogram(key, value, step=step)
-            summary_writer.flush()
+            # summary_writer = self.get_board()
+            # for key, value in metrics.items():
+            #     if isinstance(value, (float, int)):
+            #         summary_writer.scalar(key, value, step=step)
+            #     elif isinstance(value, (list, tuple, np.ndarray, jnp.ndarray, Tensor)):  # type: ignore
+            #         if hasattr(value, "cpu"):
+            #             value = value.cpu().numpy()
+            #         elif isinstance(value, jnp.ndarray):
+            #             value = np.array(value)
+            #         summary_writer.histogram(key, value, step=step)
+            # summary_writer.flush()
 
     def to_dict(self) -> Dict[str, Any]:
         """
